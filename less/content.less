@@ -1,0 +1,580 @@
+#content{
+    position: relative;
+    overflow: hidden;
+    #contentUl{
+        // 不设置初始top为0的话会导致ul初始没有top值，会使第一次点击切换效果出现问题
+        top: 0px;
+        position: absolute;
+        width: 100%;
+        transition: .5s top;
+        .contentUlLi{
+            position: relative;
+            width: 100%;
+            // 不加import会被后面的background覆盖
+            background-position: 50% 50% !important;
+            &.home{
+                background: url(../img/bg1.jpg) no-repeat;
+                .content{
+                    #homeItemList{
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        perspective: 1000px;
+                        transform-style: preserve-3d;
+                        transition: 1s top,1s opacity;
+                        .homeItem{
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            font-size:80px;
+                            color: white;
+                            text-align: center;
+                            visibility: hidden;
+                            &.homeItem > span{
+                                display: block;
+                                margin-top: 200px;
+                            }
+                            &.active{
+                                visibility: visible;
+                            }
+                            &.leftHidden{
+                                animation: leftHidden 1s linear;
+                                visibility: hidden;
+                            }  
+                            &.rightShow{
+                                animation: rightShow 1s linear;
+                                visibility: visible;
+                            } 
+                            &.leftShow{
+                                animation: leftShow 1s linear;
+                                visibility: visible;
+                            }  
+                            &.rightHidden{
+                                animation: rightHidden 1s linear;
+                                visibility: hidden;
+                            } 
+                            &.homeItem:nth-child(1){
+                                background:#dc6c5f;
+                            }
+                            &.homeItem:nth-child(2){
+                                background:#95dc84;
+                            }
+                            &.homeItem:nth-child(3){
+                                background:#64b9d2;
+                            }
+                            &.homeItem:nth-child(4){
+                                background:#000000;
+                            }
+                        }
+                    }
+                    #homeCircleList{
+                        left: 0;
+                        right: 0;
+                        bottom:0;
+                        position: absolute;
+                        text-align: center;
+                        transition: 1s bottom;
+                        .homeCircle{
+                            display: inline-block;
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            background-color: rgba(255,255,255,0.5);
+                            box-shadow: 0 0 4px rgba(25,25,25,0.8);
+                            // 设置鼠标触碰效果为一个点击的手
+                            cursor: pointer;
+                            margin: 2px;
+                            &.homeCircle.active{
+                                background-color: white;
+                                cursor: default;
+                            }
+                        }
+                    }
+                }
+            }
+            &.course{
+                overflow: hidden;
+                background: url(../img/bg2.jpg) no-repeat;
+                #courseTitle{
+                    position: relative;
+                    z-index: 1;
+                    margin: 50px;
+                }
+                #courseText{
+                    position: relative;
+                    z-index: 1;
+                    width: 400px;
+                    margin-left: 50px;
+                }
+                #courseContentItemList{
+                    z-index: 1;
+                    width: 480px;
+                    position: absolute;
+                    top: 70px;
+                    right: 50px;
+                    .plus{
+                        position: absolute;
+                        display: block;
+                        width: 9px;
+                        height: 410px;
+                        top: -7px;
+                        background: url(../img/plus_row.png) no-repeat;
+                        &.plus:nth-of-type(1){
+                            left: -5px;
+                        }
+                        &.plus:nth-of-type(2){
+                            left: 115px;
+                        }
+                        &.plus:nth-of-type(3){
+                            left: 235px;
+                        }
+                        &.plus:nth-of-type(4){
+                            left: 355px;
+                        }
+                        &.plus:nth-of-type(5){
+                            left: 475px;
+                        }
+                    }
+                    .courseContentItem{
+                        position: relative;
+                        float: left;
+                        width: 120px;
+                        height: 132px;
+                        // 设置从500px处查看一个元素的角度
+                        perspective: 500px;
+                        // 	所有子元素在3D空间中呈现。
+                        transform-style: preserve-3d;
+                        &.courseContentItem:hover .courseContent{
+                            transform: rotateY(360deg);
+                        }
+                        &.courseContentItem:hover .courseContentImg{
+                            transform: rotateY(180deg);
+                        }
+                        .courseContent{
+                            width: 100%;
+                            height: 100%;
+                            box-sizing: border-box;
+                            padding: 15px;
+                            background-color: #009ee0;
+                            transform: rotateY(180deg);
+                            transition: 1s transform;
+                            backface-visibility: hidden;
+                        }
+                        .courseContentImg{
+                            top: 0;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            // background: url(../img/apcoa.png) ;
+                            background-position: 50% 50% !important;
+                            background-repeat: no-repeat !important;
+                            backface-visibility: hidden;
+                            transition: 1s transform;
+                        }
+                        &.courseContentItem:nth-of-type(1) .courseContentImg{
+                            background: url(../img/apcoa.png);
+                        }
+                        &.courseContentItem:nth-of-type(2) .courseContentImg{
+                            background: url(../img/binoli.png);
+                        }
+                        &.courseContentItem:nth-of-type(3) .courseContentImg{
+                            background: url(../img/bks.png);
+                        }
+                        &.courseContentItem:nth-of-type(4) .courseContentImg{
+                            background: url(../img/gu.png);
+                        }
+                        &.courseContentItem:nth-of-type(5) .courseContentImg{
+                            background: url(../img/hlx.png);
+                        }
+                        &.courseContentItem:nth-of-type(6) .courseContentImg{
+                            background: url(../img/lbs.png);
+                        }
+                        &.courseContentItem:nth-of-type(7) .courseContentImg{
+                            background: url(../img/leonberg.png);
+                        }
+                        &.courseContentItem:nth-of-type(8) .courseContentImg{
+                            background: url(../img/pcwelt.png);
+                        }
+                        &.courseContentItem:nth-of-type(9) .courseContentImg{
+                            background: url(../img/tata.png);
+                        }
+                        &.courseContentItem:nth-of-type(10) .courseContentImg{
+                            background: url(../img/leonberg.png);
+                        }
+                        &.courseContentItem:nth-of-type(11) .courseContentImg{
+                            background: url(../img/tata.png);
+                        }
+                        &.courseContentItem:nth-of-type(12) .courseContentImg{
+                            background: url(../img/apcoa.png);
+                        }
+                    }
+                }
+                .plane1{ 
+                    width:359px; 
+                    height:283px; 
+                    background:url(../img/plane1.png) no-repeat; 
+                    position:absolute; 
+                    left:300px; 
+                    top:-100px; 
+                    transition:1s;
+                }
+                .plane2{ 
+                    width:309px; 
+                    height:249px; 
+                    background:url(../img/plane2.png) no-repeat; 
+                    position:absolute; 
+                    left:-100px; 
+                    top:200px; 
+                    transition:1s;
+                }
+                .plane3{ 
+                    width:230px; 
+                    height:182px; 
+                    background:url(../img/plane3.png) no-repeat; 
+                    position:absolute; 
+                    left:300px; 
+                    top:400px; 
+                    transition:1s;
+                }
+            }
+            &.works{
+                overflow: hidden;
+                background: url(../img/bg3.jpg) no-repeat;
+                // 用于给robot做定位元素
+                position: relative;
+                #worksTitle{
+                    position: relative;
+                    z-index: 1;
+                    margin: 50px 0px 100px 50px;
+                }
+                #wokrsItemList{
+                    position: relative;
+                    z-index: 1;
+                    margin-left: 50px;
+                    .worksItem{
+                        // 用于给遮罩层做定位元素
+                        position: relative;
+                        width: 220px;
+                        height: 133px;
+                        float: left;
+                        margin: 0 1px;
+                        overflow: hidden;
+                        &.worksItem:last-of-type{
+                            width: 332px;
+                        }
+                        &.worksItem:hover .worksItemImg{
+                            // 旋转45度，扩大1.5倍
+                            transform:  rotate(45deg) scale(1.5);
+                        }
+                        &.worksItem:hover .worksItemMask{
+                            opacity: 1;
+                        }
+                    .worksItemImg{
+                        height: 100%;
+                        width: 100%;
+                        transition: 1s transform;        
+                    }
+                    .worksItemMask{
+                        height: 100%;
+                        width: 100%;
+                        // 设置内边距算作可见宽
+                        box-sizing: border-box;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background-color:rgba(25,25,25,0.8);
+                        color: white;
+                        padding:15px;
+                        opacity: 0;
+                        // 字间隔
+                        letter-spacing: 1px;
+                        transition: .5s opacity;
+                        .icon{
+                            display: block;
+                            width: 32px;
+                            height: 34px;
+                            margin: 0 auto;
+                            margin-top: 10px;
+                            background-image: url(../img/zoomico.png);
+                            background-position: 0 0;
+                            transition: .5s background-position;
+                            &.icon:hover{
+                                background-position: 0 -35px;
+                            }
+                        }
+                    }
+                    }
+                }
+                #robot{
+                    z-index: 1;
+                    position: absolute;
+                    width: 167px;
+                    height: 191px;
+                    left: 900px;
+                    top: 170px;
+                    animation: robotMove 4s linear infinite;
+                }
+                .pencel1{ 
+                    width:180px; 
+                    height:97px; 
+                    background:url(../img/pencel1.png) no-repeat; 
+                    position:absolute; 
+                    transition:1s; 
+                    left:500px; 
+                    top:0;
+                }
+                .pencel2{ 
+                    width:268px; 
+                    height:38px; 
+                    background:url(../img/pencel2.png) no-repeat; 
+                    position:absolute; transition:1s; 
+                    left:300px; 
+                    top:250px;
+                }
+                .pencel3{ 
+                    width:441px; 
+                    height:231px; 
+                    background:url(../img/pencel3.png) no-repeat; 
+                    position:absolute; 
+                    transition:1s; 
+                    left:650px; 
+                    top:300px;
+                }
+            }
+            &.about{
+                background: url(../img/bg4.jpg) no-repeat;
+                #aboutTitle{
+                    margin: 50px 0px 100px 50px;
+                }
+                #aboutText{
+                    margin-left: 50px;
+                    width: 400px;
+                }
+                #aboutItemWrap{
+                    .aboutItem{
+                        position: absolute;
+                        width: 260px;
+                        height: 200px;
+                        border: 5px solid rgba(255,255,255,0.5);
+                        border-radius: 8px;
+                        z-index: 1;
+                        overflow: hidden;
+                        transition: 1s transform;
+                        &.aboutItem:nth-of-type(1){
+                            left:750px; top:50px;
+                        }
+                        &.aboutItem:nth-of-type(2){
+                            left:600px; top:290px;
+                        }
+                        .aboutItemList{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            li{
+                                position: relative;
+                                float: left;
+                                overflow: hidden;
+                                img{
+                                    position: absolute;
+                                    transition: .75s left,.75s top;
+                                }
+                            }
+                        }
+                        div{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            transform: scale(1.5);
+                            transition: .75s transform;    
+                        }
+                        &.aboutItem:hover div{
+                            transform: scale(1);
+                        }
+                        &.aboutItem:nth-of-type(1){
+                            div{
+                                background: url(../img/about2.jpg) no-repeat;
+                            }
+                        }
+                        &.aboutItem:nth-of-type(2){
+                            div{
+                                background: url(../img/about4.jpg) no-repeat;
+                            }
+                        }
+                    }
+                    #aboutLine{
+                        position: absolute;
+                        top: -60px;
+                        left: 50%;
+                        width: 357px;
+                        height: 998px;
+                        background: url(../img/greenLine.png) no-repeat;
+                    }
+                }
+            }
+            &.team{
+                background: url(../img/bg5.jpg) no-repeat;
+                #teamTitle,#teamText{
+                    margin: 50px;
+                    width: 400px;
+                    transition: 1s transform;
+                }
+                #teamTitle{
+                    float: left;
+                }
+                #teamText{
+                    float: right;
+                }
+                #teamWrap{
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    top: 50%;
+                    width: 944px;
+                    height: 448px;
+                    canvas{
+                        position: absolute;
+                        top: 20%;
+                    }
+                    #teamList{
+                        width: 944px;
+                        height: 448px;
+                        .teamItem{
+                            float: left;
+                            width: 118px;
+                            height: 100%;
+                            transition: 1s opacity;
+                            &.teamItem:nth-of-type(1){
+                                background: url(../img/team.png) no-repeat;
+                            }
+                            &.teamItem:nth-of-type(2){
+                                background: url(../img/team.png) no-repeat;
+                                background-position: -118px 0;
+                            }
+                            &.teamItem:nth-of-type(3){
+                                background: url(../img/team.png) no-repeat;
+                                background-position: -236px 0;
+                            }
+                            &.teamItem:nth-of-type(4){
+                                background: url(../img/team.png) no-repeat;
+                                background-position: -354px 0;
+                            }
+                            &.teamItem:nth-of-type(5){
+                                background: url(../img/team.png) no-repeat;
+                                background-position: -472px 0;
+                            }
+                            &.teamItem:nth-of-type(6){
+                                background: url(../img/team.png) no-repeat;
+                                background-position: -590px 0;
+                            }
+                            &.teamItem:nth-of-type(7){
+                                background: url(../img/team.png) no-repeat;
+                                background-position: -708px 0;
+                            }
+                            &.teamItem:nth-of-type(8){
+                                background: url(../img/team.png) no-repeat;
+                                background-position: -826px 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .content{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                width: 1100px;
+                height: 520px;
+            }
+        }
+    }
+    #spotUl{
+        position: absolute;
+        right: 1%;
+        top: 40%;
+        .spotItem{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 4px solid skyblue;
+            margin: 5px;
+            cursor: pointer;
+            opacity: .5;
+            &.active{
+                background-color: white;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@keyframes robotMove {
+    0%{
+        transform: translateX(0) rotateY(0);
+    }
+    49%{
+        transform: translateX(-500px) rotateY(0);
+    }
+    50%{
+        transform: translateX(-500px) rotateY(180deg);
+    }
+    100%{
+        transform: translateX(0) rotateY(180deg);
+    }
+}
+
+@keyframes leftHidden {
+    0%{
+        visibility: visible;
+    }
+    50%{
+        transform: rotateY(20deg) translateX(-50%) scale(.8);
+    }
+    100%{
+        transform:  translateZ(-200px);
+        visibility: hidden;
+    }
+}
+@keyframes rightShow {
+    0%{
+        visibility: hidden;
+        transform: translateZ(-200px);
+    }
+    50%{
+        transform: rotateY(-20deg) translateX(50%) scale(.8);
+    }
+    100%{
+        visibility: visible;
+    }
+}
+@keyframes leftShow {
+    0%{
+        transform:  translateZ(-200px);
+        visibility: hidden;
+    }
+    50%{
+        transform: rotateY(20deg) translateX(-50%) scale(.8);
+    }
+    100%{
+        visibility: visible;
+    }
+}
+@keyframes rightHidden {
+    0%{
+        visibility: visible;
+    }
+    50%{
+        transform: rotateY(-20deg) translateX(50%) scale(.8);
+    }
+    100%{
+        transform:  translateZ(-200px);
+        visibility: hidden;
+    }
+}

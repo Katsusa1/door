@@ -1,0 +1,54 @@
+/* 头部 */
+header{
+    background-color: white;
+    #contentWrap{
+        position: relative; 
+        margin: 0 auto;
+        width: 1100px;
+        height: 80px;
+        
+        /* logo */
+        #logoWrap{
+            float: left;
+            margin-top: 30px;
+        }
+        #music{
+            float: left;
+            background: url(../img/musicon.gif);
+            width:14px; 
+            height:14px; 
+            margin:50px 0 0 5px;
+        }
+        /* 右边导航 */
+        #navWrap{
+            margin-top: 50px;
+            float: right;
+            .navList{
+                float: left;
+                position: relative;
+                margin-left: 40px;
+                &:hover .up{
+                    width: 100%;
+                }
+                .up{
+                    position: absolute;
+                    width: 0px;
+                    color: #000000;
+                    overflow: hidden;
+                    transition: .5s width;
+                }
+            }
+        }
+        /* 右边小箭头 */
+        #arrow{
+            width: 21px; 
+            height: 11px;
+            position: absolute; 
+            z-index: 1;
+            top: 80px; 
+            left: 50%;
+            background: url(../img/menuIndicator.png);
+            transition: .5s left;
+        }
+    }    
+}

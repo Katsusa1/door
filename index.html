@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 给html以及body都设置height100%是为了使IE和Firefox浏览器都能实现高度自适应，
+            页面没有填满一屏使，ie6/7会有默认滚动条，设置overflow:hidden隐藏防止出现滚动条 */
+        html,body{
+            height: 100%;overflow: hidden;
+        }
+        /* 清除浏览器默认样式 */
+        html,body,h1,h2,h3,h4,h5,h6,p,ul,li{margin: 0px;padding: 0px;font: 14px "微软雅黑";}
+        /* 清除a标签默认样式 */
+        a{text-decoration: none;display: block;}
+        /* 清除li标签默认样式 */
+        li{list-style: none;}
+        /* 当你需要将一张图片居中，或者要设置区域大小，或单独一行显示，就要用到这个 */
+        img{display: block;}
+
+        /* 清除浮动 */
+        .clearfix{*zoom: 1;}
+	    .clearfix:after{content: "";display: block;clear: both;}
+
+        .commonText{ color:white; line-height:1.5; font-size:15px;}
+
+        .commonTitle{ color:#009ee0; font-size:80px; line-height:0.8; 
+		font-weight:bold; letter-spacing:-5px;
+	    }    
+    </style>
+    <link rel="stylesheet" href="less/beginMask.css">
+    <link rel="stylesheet" href="less/header.css">
+    <link rel="stylesheet" href="less/content.css">
+</head>
+<body>
+    <section id="wrap">
+        <!-- 开机遮罩层 -->
+        <div id="beginMask">
+            <div class="up"></div>
+            <div class="down"></div>
+            <div class="line"></div>
+        </div>
+        <!-- 头部 -->
+        <header>
+            <div id="contentWrap">
+                <!-- logo -->
+                <div id="logoWrap">
+                    <a href="javascript:;">
+                        <h1><img src="./img/logo.png" alt=""></h1>
+                    </a>
+                </div>
+                <!-- 音乐图标 -->
+                <div id="music">
+                    <audio src="./img/鈴木このみ - アルカテイル (Game Size Ver.).mp3" loop></audio>
+                </div>
+                <!-- 右边导航栏 -->
+                <div id="navWrap">
+                    <!-- 给ul清除浮动，否则它的高度会变成0 -->
+                    <ul class="clearfix">
+                        <li class="navList"><a href="javascript:;">
+                        <div class="up"><img src="./img/home_gruen.png" alt=""></div>
+                        <div class="down"><img src="./img/home.png" alt=""></div>
+                        </a></li>
+                        <li class="navList"><a href="javascript:;">
+                        <div class="up">Course</div>
+                        <div class="down">Course</div>
+                        </a></li>   
+                        <li class="navList"><a href="javascript:;">
+                        <div class="up">Works</div>
+                        <div class="down">Works</div>
+                        </a></li>   
+                        <li class="navList"><a href="javascript:;">
+                        <div class="up">About</div>
+                        <div class="down">About</div>
+                        </a></li>   
+                        <li class="navList"><a href="javascript:;">
+                        <div class="up">Team</div>
+                        <div class="down">Team</div>
+                        </a></li>
+                    </ul>
+                </div>
+                <!-- 小箭头 -->
+                <div id="arrow"></div>
+            </div>
+        </header>
+        <!-- 内容区 -->
+        <section id="content">
+            <ul id="contentUl">
+                <li class="contentUlLi home commonTitle"><div class="content">
+                    <ul id="homeItemList">
+                        <li class="homeItem active">
+                            <span>one layer</span>
+                        </li>
+                        <li class="homeItem">
+                            <span>two layer</span>
+                        </li>
+                        <li class="homeItem">
+                            <span>three layer</span>
+                        </li>
+                        <li class="homeItem">
+                            <span>four layer</span>
+                        </li>
+                    </ul>
+                    <ul id="homeCircleList">
+                        <li class="homeCircle active"></li>
+                        <li class="homeCircle"></li>
+                        <li class="homeCircle"></li>
+                        <li class="homeCircle"></li>
+                    </ul>
+                </div></li>
+                <li class="contentUlLi course commonText"><div class="content">
+                    <div id="courseTitle" class="commonTitle">
+                        <span>EINIGE</span><br>
+                        <span>UNSERER</span><br>
+                        <span>KUNDEN</span>
+                    </div>
+                    <div id="courseText">
+                        <span>
+                            Das Kundenvertrauen in unsere Kompetenz ist die notwendige Basis einer erfolgreichen Zusammenarbeit, gleichzeitig aber auch das größte Lob, das man uns entgegenbringen kann.
+                            <br>
+                            Diese und viele weitere große und kleine Kunden vertrauen uns seit Jahren, was uns stolz macht, und dafür sagen wir an dieser Stelle einfach mal.
+                        </span>
+                    </div>
+                    <ul id="courseContentItemList">
+                        <span class="plus"></span>
+                        <span class="plus"></span>
+                        <span class="plus"></span>
+                        <span class="plus"></span>
+                        <span class="plus"></span>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>侍中、侍郎郭攸之、费祎、董允等</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>此皆良实，志虑忠纯，</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>是以先帝简拔以遗陛下</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>愚以为宫中之事</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>事无大小，悉以咨之</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>然后施行，必能</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>裨补阙漏，有所广益。</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>将军向宠，性行淑均</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>晓畅军事，试用于昔日</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>先帝称之曰能</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>是以众议举宠为督</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                        <li class="courseContentItem">
+                            <div class="courseContent">
+                                <span>愚以为营中之事</span>
+                            </div>
+                            <div class="courseContentImg">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="plane1"></div>
+                    <div class="plane2"></div>
+                    <div class="plane3"></div>
+                </div></li>
+                <li class="contentUlLi works commonTitle"><div class="content">
+                        <div id="worksTitle">
+                            <span>EINBLICK</span><br>
+                            <span>ERKENNTNIS</span><br>
+                            <span>ERGEBNIS</span>
+                        </div>
+                        <ul id="wokrsItemList">
+                            <li class="worksItem">
+                                <div class="worksItemImg">
+                                    <img src="./img/worksimg1.jpg" alt="">
+                                </div>   
+                                <div class="worksItemMask">
+                                    <span>先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。</span>
+                                    <span class="icon"></span>
+                                </div>
+                            </li>
+                            <li class="worksItem">
+                                <div class="worksItemImg">
+                                    <img src="./img/worksimg2.jpg" alt="">
+                                </div>
+                                <div class="worksItemMask">
+                                    <span>然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。</span>
+                                    <span class="icon"></span>
+                                </div>
+                            </li>
+                            <li class="worksItem">
+                                <div class="worksItemImg">
+                                    <img src="./img/worksimg3.jpg" alt="">
+                                </div>
+                                <div class="worksItemMask">
+                                    <span>诚宜开张圣听，以光先帝遗德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。</span>
+                                    <span class="icon"></span>
+                                </div>
+                            </li>
+                            <li class="worksItem">
+                                <div class="worksItemImg">
+                                    <img src="./img/worksimg4.jpg" alt="">
+                                </div>
+                                <div class="worksItemMask">
+                                    <span>宫中府中，俱为一体，陟罚臧否，不宜异同。若有作奸犯科及为忠善者，宜付有司论其刑赏，以昭陛下平明之理，不宜偏私，使内外异法也。</span>
+                                    <span class="icon"></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div id="robot">
+                            <img src="./img/robot.png" alt="">
+                        </div>
+                        <div class="pencel1"></div>
+                        <div class="pencel2"></div>
+                        <div class="pencel3"></div>
+                </div></li>
+                <li class="contentUlLi about"><div class="content">
+                    <div id="aboutTitle" class="commonTitle">
+                        <span>DIE</span><br>
+                        <span>SPEZIELLE</span><br>
+                        <span>VIELFALT</span> 
+                    </div>
+                    <div id="aboutText" class="commonText">
+                        <span>Der bunte Medienmix ist die Faszination die uns antreibt und das, was man an uns schätzt. Von A bis Z und von vorne bis hinten nehmen wir Ihr Projekt unter unsere Fittiche und lassen es zu etwas Großartigem heranwachsen.</span>
+                    </div>
+                    <div id="aboutItemWrap">
+                        <div class="aboutItem">
+                            <div></div>
+                            <ul class="aboutItemList" data-src="./img/about1.jpg"></ul>
+                        </div>
+                        <div class="aboutItem">
+                            <div></div>
+                            <ul class="aboutItemList" data-src="./img/about3.jpg"></ul>
+                        </div>
+                        <div id="aboutLine"></div>
+                    </div>
+                </div></li>
+                <li class="contentUlLi team"><div class="content">
+                    <div id="teamTitle" class="commonTitle">
+                        <span>WIR SIND</span> <br>
+                        <span>VOXELAIR</span> 
+                    </div>
+                    <div id="teamText">
+                        <span class="commonText">
+                            Wir sind seit 2002 eine Full-Service-Werbeagentur mit Stammsitz in Heimsheim, zwischen Stuttgart und Karlsruhe.
+                            <br>
+                            Über 60 Jahre Erfahrung vereinen das gesamte VoxelAir-Team. Dabei hat jedes Voxel neben professionellem Allroundwissen auch sein ganz spezielles Gebiet, um selbst die individuellsten Kundenwünsche schnell und kompetent umzusetzen.
+                        </span>
+                    </div>
+                    <div id="teamWrap">
+                        <ul id="teamList">
+                            <li class="teamItem"></li>
+                            <li class="teamItem"></li>
+                            <li class="teamItem"></li>
+                            <li class="teamItem"></li>
+                            <li class="teamItem"></li>
+                            <li class="teamItem"></li>
+                            <li class="teamItem"></li>
+                            <li class="teamItem"></li>
+                        </ul>
+                    </div>
+                </div></li>
+            </ul>
+            <ul id="spotUl">
+                <li class="spotItem active"></li>
+                <li class="spotItem"></li>
+                <li class="spotItem"></li>
+                <li class="spotItem"></li>
+                <li class="spotItem"></li>
+            </ul>
+        </section> 
+    </section>
+    <script>
+
+window.onload = function(){
+    const arrow = document.querySelector("#arrow")
+    const navList = document.querySelectorAll(".navList")
+    const Up = document.querySelectorAll("#navWrap .up")
+    const header = document.querySelector("header")
+    const content = document.querySelector('#content')
+    const contentli = document.querySelectorAll(".contentUlLi")
+    const contentUl =  document.querySelector("#contentUl");
+    const homeCircle = document.querySelectorAll(".homeCircle")
+    const homeItem = document.querySelectorAll('.homeItem')
+    const aboutItemList = document.querySelectorAll('.aboutItemList')
+    const spotItem = document.querySelectorAll('.spotItem')
+    const teamWrap = document.querySelector('#teamWrap')
+    const teamItem = document.querySelectorAll('.teamItem')
+    const music = document.querySelector('#music')
+    const audio = document.querySelector('audio')
+    const beginMask = document.querySelector('#beginMask')
+    const beginDiv = document.querySelectorAll('#beginMask div')
+    const beginLine = document.querySelector('#beginMask .line')
+    let preventIndex = 0
+    
+
+    // 开机动画
+    begin()
+    function begin(){
+        const beginArr = ['bg1.jpg','bg2.jpg','bg3.jpg','bg4.jpg','bg5.jpg','about1.jpg','about2.jpg','about3.jpg','about4.jpg','worksimg1.jpg','worksimg2.jpg','worksimg3.jpg','worksimg4.jpg','team.png','greenLine.png'];
+        let flagLine = 0
+        for(let i=0;i<beginArr.length;i++){
+            // 图片预加载
+            let img = new Image()
+            img.src = './img/'+beginArr[i]
+            // 图片每次加载完毕使进度条（line）的宽度变宽，直到图片全部加载完毕宽度到达100%
+            img.onload = function () {
+                flagLine++
+                beginLine.style.width = flagLine/beginArr.length*100+"%"
+            }       
+        }
+
+        // transition（过渡）完毕事件
+        beginLine.addEventListener('transitionend',function(){
+            if(flagLine == beginArr.length){
+                for(let i=0;i<beginDiv.length;i++){
+                    // 使上下遮罩层和进度条（line）的宽度变为0
+                    beginDiv[i].style.height = 0 + 'px'
+                }
+            }
+            // 此时开机动画执行完毕
+            beginMask.remove()
+            audio.play()
+            arr[0].On()
+            autoChangeLayer()
+        })
+    }
+    
+
+    // 音乐
+    music.onclick = function(){
+        if(audio.paused){
+            audio.play()
+			music.style.background ="url(./img/musicon.gif)";
+        }else{
+            audio.pause()
+			music.style.background ="url(./img/musicoff.gif)";
+        }
+    }
+
+    // 出入场动画
+    const arr = [
+        // 第一屏出入场
+        {
+            Into:function(){
+                const homeItemList = document.querySelector('#homeItemList')
+                const homeCircleList = document.querySelector('#homeCircleList')
+                homeItemList.style.top = -600 + "px";
+                homeCircleList.style.bottom = -600 + "px";
+                homeItemList.style.opacity = .5;
+            },
+            On:function(){
+                const homeItemList = document.querySelector('#homeItemList')
+                const homeCircleList = document.querySelector('#homeCircleList')
+                homeItemList.style.top = 0 + "px";
+                homeCircleList.style.bottom = 0 + "px";
+                homeItemList.style.opacity = 1;
+            }
+        },
+        // 第二屏出入场
+        {
+            Into:function(){
+                const plane1 = document.querySelector('.plane1')
+                const plane2 = document.querySelector('.plane2')
+                const plane3 = document.querySelector('.plane3')
+                plane1.style.transform = 'translate(-200px,-200px)'
+                plane2.style.transform = 'translate(-200px,200px)'
+                plane3.style.transform = 'translate(200px,-200px)'
+            },
+            On:function(){
+                const plane1 = document.querySelector('.plane1')
+                const plane2 = document.querySelector('.plane2')
+                const plane3 = document.querySelector('.plane3')
+                plane1.style.transform = 'translate(0px,0px)'
+                plane2.style.transform = 'translate(0px,0px)'
+                plane3.style.transform = 'translate(0px,0px)'
+            }
+        },
+        // 第三屏出入场
+        {
+            Into:function(){
+                const pencel1 = document.querySelector('.pencel1')
+                const pencel2 = document.querySelector('.pencel2')
+                const pencel3 = document.querySelector('.pencel3')
+                pencel1.style.transform = 'translateY(-100px)'
+                pencel2.style.transform = 'translateY(100px)'
+                pencel3.style.transform = 'translateY(100px)'              
+            },
+            On:function(){
+                const pencel1 = document.querySelector('.pencel1')
+                const pencel2 = document.querySelector('.pencel2')
+                const pencel3 = document.querySelector('.pencel3')
+                pencel1.style.transform = 'translateY(0px)'
+                pencel2.style.transform = 'translateY(0px)'
+                pencel3.style.transform = 'translateY(0px)'
+            }
+        },
+        // 第四屏出入场
+        {
+            Into:function(){
+                const aboutItem1 = document.querySelectorAll('.aboutItem')[0]
+                const aboutItem2 = document.querySelectorAll('.aboutItem')[1]
+                aboutItem1.style.transform = 'rotate(30deg)'
+                aboutItem2.style.transform = 'rotate(-30deg)'
+            },
+            On:function(){
+                const aboutItem1 = document.querySelectorAll('.aboutItem')[0]
+                const aboutItem2 = document.querySelectorAll('.aboutItem')[1]
+                aboutItem1.style.transform = 'rotate(0deg)'
+                aboutItem2.style.transform = 'rotate(0deg)'
+            }
+        },
+        // 第五屏出入场
+        {
+            Into:function(){
+                const teamTitle = document.querySelector('#teamTitle')
+                const teamText = document.querySelector('#teamText')
+                teamTitle.style.transform = 'translateX(-300px)'
+                teamText.style.transform = 'translateX(300px)'
+            },
+            On:function(){
+                const teamTitle = document.querySelector('#teamTitle')
+                const teamText = document.querySelector('#teamText')
+                teamTitle.style.transform = 'translateX(0px)'
+                teamText.style.transform = 'translateX(0px)'
+            }
+        },
+    ]
+
+    // 给每一屏都设置初始化
+    for(let i=0;i<arr.length;i++){
+        arr[i].Into()
+    }
+
+    // 第一屏js
+    let oldIndex = 0
+    // 遍历，给每一个小圆点加点击事件
+    for(let i=0;i<homeCircle.length;i++){
+        homeCircle[i].index = i
+        // 小圆点点击切换
+        homeCircle[i].onclick = function () {
+            // 点击之后取消自动切换图层
+            clearInterval(layerTimer)
+            // 遍历，清除其他小圆点的active
+            for(let i=0;i<homeCircle.length;i++){
+                homeCircle[i].classList.remove('active')
+            }
+            this.classList.add('active')
+            // 手动切换图层
+            handChangeLayer(this.index)
+            oldIndex = this.index
+            // 同步手动与自动
+            autoChangeIndex = this.index
+            // 重新开始自动轮播
+            // autoChangeLayer()
+        }
+    }
+
+    // 手动切换当前图层
+    function handChangeLayer(index){
+        // 手动切换当前图层
+        // 点击了当前小圆点右侧的
+        if(index>oldIndex){
+            // 切换当前显示的图层
+            homeItem[index].classList.add('rightShow')
+            homeItem[index].classList.remove('leftHidden')
+            homeItem[index].classList.remove('rightHidden')
+            homeItem[index].classList.remove('leftShow')
+            homeItem[oldIndex].classList.add('leftHidden')
+            homeItem[oldIndex].classList.remove('leftShow')
+            homeItem[oldIndex].classList.remove('rightShow')
+            homeItem[oldIndex].classList.remove('rightHidden')
+        }
+        // 点击了当前小圆点左边的
+        if(index<oldIndex){
+            // 切换当前显示的图层
+            homeItem[index].classList.add('leftShow')
+            homeItem[index].classList.remove('leftHidden')
+            homeItem[index].classList.remove('rightHidden')
+            homeItem[index].classList.remove('rightShow')
+            homeItem[oldIndex].classList.add('rightHidden')
+            homeItem[oldIndex].classList.remove('leftShow')
+            homeItem[oldIndex].classList.remove('rightShow')
+            homeItem[oldIndex].classList.remove('leftHidden')
+        }
+    }
+
+    // 自动切换当前图层
+    let layerTimer = 0
+    let autoChangeIndex = 0
+    function autoChangeLayer(){
+        clearInterval(layerTimer)
+        
+        layerTimer = setInterval(function(){
+            autoChangeIndex++
+            if(autoChangeIndex==homeItem.length){
+            autoChangeIndex = 0
+            }
+
+            //自动切换时同步小圆点切换 
+            for(let i=0;i<homeCircle.length;i++){
+                homeCircle[i].classList.remove('active')
+            }
+            homeCircle[autoChangeIndex].classList.add('active')
+
+            homeItem[autoChangeIndex].classList.add('rightShow')
+            homeItem[autoChangeIndex].classList.remove('leftHidden')
+            homeItem[autoChangeIndex].classList.remove('rightHidden')
+            homeItem[autoChangeIndex].classList.remove('leftShow')
+            homeItem[oldIndex].classList.add('leftHidden')
+            homeItem[oldIndex].classList.remove('leftShow')
+            homeItem[oldIndex].classList.remove('rightShow')
+            homeItem[oldIndex].classList.remove('rightHidden')
+
+            // 同步自动与手动
+            oldIndex = autoChangeIndex
+        },2000)
+    }
+ 
+
+    // 第四屏js
+    pictureChange()
+    function pictureChange(){
+        for(let i=0;i<aboutItemList.length;i++){
+            pictureBoom(aboutItemList[i])
+        }
+    }
+
+    // 图片炸裂效果
+    function pictureBoom(ul){
+        let w = ul.offsetWidth/2
+        let h = ul.offsetHeight/2
+        // 创建4个li和4个img
+        for(let i=0;i<4;i++){
+            let liNode = document.createElement('li')
+            liNode.style.width = w + 'px'
+            liNode.style.height = h + 'px'
+            let imgNode = document.createElement('img')
+            imgNode.src = ul.dataset.src
+            // 将img标签放入li标签
+            liNode.appendChild(imgNode)
+            // 将li标签放入ul标签
+            ul.appendChild(liNode)
+            /*
+                    图片偏移位置            i
+                1. left:0    top:0          0
+                2. left:-w   top:0          1
+                3. left:0    top:-h         2
+                4. left:-w   top:-h         3
+		    */
+            imgNode.style.left = -(i%2)*w + "px"
+            imgNode.style.top = -Math.floor(i/2)*h + "px"
+        }
+        ul.onmouseenter = function(){
+        /*
+            触碰前
+                图片偏移位置
+            1. left:0    top:0
+            2. left:-w   top:0
+            3. left:0    top:-h
+            4. left:-w   top:-h
+        */
+        /*
+            触碰后
+                图片偏移位置
+            1. left:0    top:h
+            2. left:-2w   top:0
+            3. left:w    top:-h
+            4. left:-w   top:-2h
+        */
+            const imgNodes = this.querySelectorAll('.aboutItemList img')
+            imgNodes[0].style.top = h + "px"
+            imgNodes[1].style.left = -2*w + "px"
+            imgNodes[2].style.left = w + "px"
+            imgNodes[3].style.top = -2*h + "px"
+        }
+        ul.onmouseleave = function(){
+            const imgNodes = this.querySelectorAll('.aboutItemList img')
+            imgNodes[0].style.top = 0 + "px"
+            imgNodes[1].style.left = -w + "px"
+            imgNodes[2].style.left = 0 + "px"
+            imgNodes[3].style.top = -h + "px"
+        }
+    }
+
+
+    // 第五屏js
+    let oc = null
+
+    bubble()
+    function bubble() {
+        for(let i=0;i<teamItem.length;i++){
+            teamItem[i].index = i
+            // 当鼠标移动到人上面时使该人高亮显示
+            teamItem[i].onmouseenter = function () {
+                for(let i=0;i<teamItem.length;i++){
+                    teamItem[i].style.opacity = .5
+                }
+                this.style.opacity = 1
+                addCanvas(this) 
+                // 每次鼠标移动到不同的item上面都会使canvas的位置发生实时变化，使canvas移动到鼠标当前触碰的item上
+                oc.style.left = this.index*oc.width + 'px'
+            }
+
+            // 当鼠标移出包裹所有人的容器时去除高亮显示
+            teamWrap.onmouseleave = function () {
+                for(let i=0;i<teamItem.length;i++){
+                    teamItem[i].style.opacity = 1
+                }
+                removeCanvas()
+            }
+        }
+    }
+    
+
+    // 创建一个canvas
+    function addCanvas(li){
+        if(!oc){
+            oc = document.createElement('canvas')
+            oc.width = li.offsetWidth
+            oc.height = li.offsetHeight*3/4
+            teamWrap.appendChild(oc)
+            form(oc)
+        }
+        
+    }
+
+    // 消除canvas
+    function removeCanvas(){
+        // 消除canvas
+        oc.remove()
+        // 用null接住canvas便于后面再次创建canvas
+        oc = null
+        // 清除2个创建气泡的定时器
+        clearInterval(formTimer1)
+        clearInterval(formTimer2)
+    }
+
+    // 气泡
+    let formTimer1 = 0
+    let formTimer2 = 0
+    function form(oc){
+        if(oc.getContext){
+				var ctx = oc.getContext("2d");
+				// 放随机圆的信息，圆心，半径
+				var arr = [];
+				formTimer1 = setInterval(function(){
+					// console.log(arr);
+					ctx.clearRect(0,0,oc.width,oc.height);
+					
+					// 动画
+					arr.forEach(function(item,index){
+						item.deg+=5;
+						item.x = item.startX + Math.sin((item.deg*Math.PI/180))*item.stepY;
+						item.y = item.startY - (item.deg*Math.PI/180)*item.stepX;
+						
+						if(item.y <= -item.r){
+							arr.splice(1,index);
+						}
+					})
+					
+					// 画圆
+					arr.forEach(function(item){
+						ctx.save();
+						ctx.fillStyle = "rgba("+item.red+","+item.green+","+item.blue+","+item.alp+")";
+						ctx.beginPath()
+						ctx.arc(item.x,item.y,item.r,0,2*Math.PI);
+						ctx.fill();
+						ctx.restore();
+					})
+				},10);
+				
+				
+				
+				// 提供随机圆
+				formTimer2 = setInterval(function(){
+					var r = Math.round(Math.random())*3+4;
+					var x = Math.round(Math.random()*oc.width);
+					var y = oc.height - r;
+					var red = Math.round(Math.random()*255);
+					var green = Math.round(Math.random()*255);
+					var blue = Math.round(Math.random()*255);
+					var alp = 1;
+					
+					var deg = 0;
+					var startX = x;
+					var startY = y;
+					var stepX = Math.round(Math.random()*20)+10;
+					var stepY = Math.round(Math.random()*50)+10;
+					
+					arr.push({
+						x:x,
+						y:y,
+						r:r,
+						red:red,
+						green:green,
+						blue:blue,
+						alp:alp,
+						deg:deg,
+						startX:startX,
+						startY:startY,
+						stepX:stepX,
+						stepY:stepX,
+					})
+				},1000/60);	
+			}
+    }
+
+
+    // 同步当前屏的索引
+    let now = 0
+    // 定时器
+    let timer = 0
+    window.onresize = function(){
+        /*
+            调整分辨率,使页面分辨率在变化时，界面一直能处于页面中央
+            1.没有点击的时候视口只能出现一屏  contentBind();
+            2.点击后视口只能出现一屏  在1的基础上对每一屏的偏移量进行重新调整
+            3.小箭头的位置也需要头部
+		*/
+        contentBind()
+        // contentUl.style.top = -(index)*contentli[index].offsetHeight + "px";
+		// arrow.style.left = liNodes[now].offsetLeft + liNodes[now].offsetWidth/2 - arrowEl.offsetWidth/2+"px";
+    }
+
+     // Firefox
+     if(content.addEventListener){
+        content.addEventListener('DOMMouseScroll',function(ev){
+            ev = ev||event
+            // 每次触发事件都清空定时器，使定时器中的代码不执行，限制滚动多次导致页面滚动过快
+            clearTimeout(timer)
+            timer = setTimeout(function(){
+                mouseScroll(ev)
+            },100)    
+        })
+    }
+
+    // 非Firefox
+    content.onmousewheel = function(ev){
+        ev = ev||event
+        clearTimeout(timer)
+        timer = setTimeout(function(){
+            mouseScroll(ev)
+        },100)
+    } 
+
+    function mouseScroll(ev){
+        ev = ev||event
+        let dir = ''
+        // Firefox      上负下正
+        // 非Firefox    上正下负
+        if(ev.wheelDelta){
+            // 当是非火狐浏览器时   上正下负
+            dir = ev.wheelDelta>0?"up":"down"
+        }else if(ev.detail){
+            // 但是火狐浏览器时     上负下正
+            dir = ev.detail<0?"up":"down";
+        }
+        preventIndex = now
+        switch (dir){
+            case "up":
+                if(now>0){
+                    now--
+                    move(now)
+                }
+                break
+            case "down":
+            if(now<contentli.length-1){
+                    now++
+                    move(now)
+                }
+                break
+        }
+    }
+
+    contentBind()
+    // 内容区交互
+    function contentBind(){
+        content.style.height = document.documentElement.clientHeight - header.offsetHeight + "px"
+        for(let i=0;i<contentli.length;i++){
+            contentli[i].style.height = document.documentElement.clientHeight - header.offsetHeight + "px"
+        }
+    }
+
+   
+    
+    headBind()
+    // 头部交互
+    function headBind(){
+        // 设置第一个li中的up层小图标开局显示
+        Up[0].style.width = "100%";
+        // 使箭头开局在第一个li正下方
+        arrow.style.left = navList[0].offsetLeft + navList[0].offsetWidth/2 - arrow.offsetWidth/2 + "px"
+        // 遍历navList
+        for(let i=0;i<navList.length;i++){
+            // 将i存储起来，便于后面使用
+            navList[i].index = i;   
+            navList[i].onclick = function(){
+                preventIndex = now
+                move(this.index)
+                now = this.index;
+            }
+        }
+    }
+
+    // 内容区右侧小圆点点击事件
+    for(let i=0;i<spotItem.length;i++){
+        spotItem[i].onclick = function(){
+            for(let i=0;i<spotItem.length;i++){
+                spotItem[i].classList.remove('active')
+            }
+            this.classList.add('active')
+            preventIndex = now
+            move(i)
+            now = i
+        }
+    }
+    
+    function move(index){
+            for(let i=0;i<Up.length;i++){
+                // 设计width为空是为了不让up中产生内联样式
+                //Up[i].style.width="0";
+                Up[i].style.width = ''
+            }
+            // 点击哪个li就使这个li中的up层显示
+            Up[index].style.width = "100%";
+            // 将小箭头位置换到点击的li的正下方
+            arrow.style.left = navList[index].offsetLeft + navList[index].offsetWidth/2 - arrow.offsetWidth/2 + "px"
+            contentUl.style.top = -(index)*contentli[index].offsetHeight + "px"
+            // contentUl.style.top = -index*(document.documentElement.clientHeight - header.offsetHeight)+"px"
+            
+            //右侧小圆点的active同步屏幕切换 
+            for(let i=0;i<spotItem.length;i++){
+                spotItem[i].classList.remove('active')
+            }
+            spotItem[index].classList.add('active')
+
+            // 入场动画
+            //可以不加判断
+            if(arr[index]&& typeof arr[index]["Into"] === "function"){
+                arr[index].On()
+            }
+            if(arr[preventIndex]&& typeof arr[preventIndex]["On"] === "function"){
+                arr[preventIndex].Into()
+            }
+    }      
+
+} 
+    
+
+    </script>
+</body>
+</html>
